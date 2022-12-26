@@ -1,0 +1,53 @@
+ if (textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Lütfen notları eksiksiz giriniz…");
+            }
+
+            double vize = Convert.ToDouble(textBox1.Text);
+            double final = Convert.ToDouble(textBox2.Text);
+
+
+            if (vize > 100 || final > 100)
+            {
+                MessageBox.Show("Lütfen notları 0-100 arasında giriniz...");
+            }
+
+
+            else if (radioButton1.Checked == true)
+            {
+                double vizeort = vize * 0.30;
+                double finalort = final * 0.70;
+
+                double ort = (vizeort + finalort);
+                textBox3.Text = Convert.ToString(ort);
+                if (ort >= 0 && ort <= 50)
+                {
+                    textBox4.Text=("BAŞARISIZ");
+                }
+                else if (ort > 50 && ort <= 85)
+                {
+                    textBox4.Text = ("ORTA");
+                }
+                else if (ort > 85 && ort <= 100)
+                {
+                    textBox4.Text = ("BAŞARILI");
+                }
+            }
+            else if (radioButton2.Checked == true)
+            {
+                double vizeort = vize * 0.40;
+                double finalort = final * 0.60;
+
+                double ort = (vizeort + finalort);
+                textBox3.Text = Convert.ToString(ort);
+                if (ort >= 0 && ort <= 50)
+                {
+                    textBox4.Text = ("BAŞARISIZ");
+                }
+                else if (ort > 50 && ort <= 85)
+                {
+                    textBox4.Text = ("ORTA");
+                }
+                else if (ort > 85 && ort <= 100)
+                {
+                    textBox4.Text = ("BAŞARILI");
